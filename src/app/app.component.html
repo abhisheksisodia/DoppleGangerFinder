@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+<div class="buttonContainer" style="text-align:center;">
+  <button md-raised-button style="background: #3498db; color: #ffffff" routerLink="/main" routerLinkActive="active" (click)="goToMain()">Find your match</button>
+  <button md-raised-button style="background: #3498db; color: #ffffff" routerLink="/results" routerLinkActive="active">View past matches</button>
+</div>
+<div class="buttonContainer" style="text-align:center;" *ngIf="!findMatch">
+  <img height="300" width="600" src="assets/mainPageHeaderLogo.jpg">
+</div>
+<div style="text-align:center;">
+  <router-outlet></router-outlet>
+</div>
+

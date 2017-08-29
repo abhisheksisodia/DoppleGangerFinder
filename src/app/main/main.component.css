@@ -1,0 +1,15 @@
+.rootContainer {
+    margin-top: 15px;
+}
+
+.imgContainer {
+    margin-top: 15px;
+    height: 380px;
+    width: 520px;
+    text-align: center;
+}
+
+.button {
+    background: #3498db; 
+    color: #ffffff
+}

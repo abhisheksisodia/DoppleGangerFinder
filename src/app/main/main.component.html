@@ -1,0 +1,34 @@
+<div class="rootContainer" [hidden]="captured">
+  <ack-webcam [(ref)]="webcam" [options]="options" (onSuccess)="onCamSuccess($event)" (onError)="onCamError($event)"></ack-webcam>
+</div>
+<div class="rootContainer" *ngIf="webcam" [hidden]="captured">
+  <button md-button class="button" (click)="captureImage()">Capture</button>
+</div>
+<img [hidden]="!captured" *ngIf="!similarFaces" class="imgContainer" src="{{base64}}">
+<div class="rootContainer" [hidden]="!captured" *ngIf="!similarFaces">
+  <button md-button class="button" (click)="retakeImage()">Retake</button>
+  <button md-button class="button" (click)="fetchSimilarFaces()">Submit</button>
+</div>
+<div class="rootContainer" *ngIf="similarFaces">
+  <button md-button class="button" (click)="showResults()">Show Results</button>
+</div>
+<md-card style="margin-right:100px; margin-left:100px" class="rootContainer" *ngIf="showMatches">
+    <md-list>
+    <md-list-item *ngFor="let match of matches">
+        <img md-list-avatar src="{{match.url}}">
+        <h3 md-line>Match Percentage</h3>
+        <p md-line>
+            <span> {{match.confidence}}% </span>
+        </p>
+    </md-list-item>
+    </md-list>
+</md-card>
+
+<!-- <h3 *ngIf="showMatches">Matches</h3>
+<ul>
+  <li *ngFor="let match of matches">
+    <img src={{match}}>
+  </li> 
+</ul> -->
+<!-- 
+<h3 [hidden]="!captured">{{similarFaces | json}} </h3> -->
