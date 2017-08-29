@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCardModule, MdListModule, MdLineModule, MdGridListModule} from '@angular/material';
+import {MdButtonModule, MdProgressSpinnerModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { WebCamComponent } from 'ack-angular-webcam';
@@ -26,10 +26,7 @@ import { ResultsComponent } from './results/results.component';
     HttpModule,
     BrowserAnimationsModule,
     MdButtonModule,
-    MdCardModule, 
-    MdListModule, 
-    MdLineModule,
-    MdGridListModule
+    MdProgressSpinnerModule
   ],
   providers: [FaceService, DbService],
   bootstrap: [AppComponent]

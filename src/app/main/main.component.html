@@ -12,23 +12,36 @@
 <div class="rootContainer" *ngIf="similarFaces">
   <button md-button class="button" (click)="showResults()">Show Results</button>
 </div>
-<md-card style="margin-right:100px; margin-left:100px" class="rootContainer" *ngIf="showMatches">
-    <md-list>
-    <md-list-item *ngFor="let match of matches">
-        <img md-list-avatar src="{{match.url}}">
-        <h3 md-line>Match Percentage</h3>
-        <p md-line>
-            <span> {{match.confidence}}% </span>
-        </p>
-    </md-list-item>
-    </md-list>
-</md-card>
-
-<!-- <h3 *ngIf="showMatches">Matches</h3>
-<ul>
-  <li *ngFor="let match of matches">
-    <img src={{match}}>
-  </li> 
-</ul> -->
-<!-- 
-<h3 [hidden]="!captured">{{similarFaces | json}} </h3> -->
+<div style="overflow-y: scroll; height:100%;" *ngIf="showMatches">
+<div class="cards" *ngFor="let match of matches"> 
+  <div class="card">
+    <div class="col">
+    <div class="row"> 
+      <img class="img-avatar" src="{{match.url}}" alt="Image not found">
+      <div class="card-detail">
+          <h1>{{match.firstName}} {{match.lastName}}</h1>
+          <div class="row">
+            <h2>Position:</h2>
+            <h3>{{match.position}}</h3>
+          </div>
+          <p>Company: {{match.position}}</p>
+      </div>
+      <div class="card-status">
+          <div class="status-container">
+              <h4> Match Percentage </h4>
+              <md-progress-spinner class="progress-bar"
+              [strokeWidth]="3"
+              [color]="color"
+              [mode]="mode"
+              [value]="match.confidence">
+              </md-progress-spinner>
+            <div class="status-percentage">
+              <h3> {{match.confidence}}% </h3>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

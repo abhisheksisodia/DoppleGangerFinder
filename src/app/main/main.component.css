@@ -13,3 +13,129 @@
     background: #3498db; 
     color: #ffffff
 }
+
+h1 {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+    line-height: 26.4px;
+    color: #0071bf;
+    margin: 1px;
+    padding: 0;
+}
+h2 {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+    font-weight: 500;
+    color: #0071bf;
+    margin: 1px;
+    margin-right: 2px;
+    padding: 0;
+}
+h3 {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+    font-weight: 400;
+    color: #F65B9E;
+    margin: 1px;
+    padding: 0;
+}
+h4 {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+    font-weight: 500;
+    color: #0071bf;
+    margin: 1px;
+    padding: 0;
+}
+p {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+    line-height: 20px;
+    margin: 2px;
+    padding: 0;
+}
+
+.cards {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    text-decoration: none;
+    color: #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 100%;
+    padding: 10px;
+    margin: 10px
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card-detail {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column
+}
+
+.card-status {
+    padding-top: 5px;
+    margin-left: 20px
+}
+
+.col {
+    display: flex;
+    flex-direction: column
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-avatar {
+    width: 100px;
+    height: 100px
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+.progress-bar {
+    padding-top: 5px;
+    width: 60px;
+    height: 60px
+}
+
+.status-container {
+    position: relative;
+}
+
+.status-percentage {
+    z-index: 100;
+    position: absolute;
+    left:15px;
+    bottom:20px
+}

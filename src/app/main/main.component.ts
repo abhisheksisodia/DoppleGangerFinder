@@ -22,6 +22,8 @@ export class MainComponent implements OnInit {
   images: Image[];
   matches: Match[];
   showMatches: Boolean = false;
+  color = 'accent';
+  mode = 'determinate';
 
   constructor(private route: ActivatedRoute, 
     private http:Http, 
@@ -52,7 +54,7 @@ export class MainComponent implements OnInit {
 
   async fetchSimilarFaces() {
     // passing test face id for now
-    this.face.getSimilarFaces("fc2b85f6-e037-4ff1-accf-61a75f0b3b69")
+    this.face.getSimilarFaces("15f818b4-6350-4800-a152-63657201ef37")
       .subscribe(data => {
         this.similarFaces = data;
       })
@@ -66,7 +68,11 @@ export class MainComponent implements OnInit {
               this.matches.push( {
                 id: this.similarFaces[i].persistedFaceId, 
                 url: this.images[j].url,
-                confidence: Math.round(this.similarFaces[i].confidence * 100)
+                confidence: Math.round(this.similarFaces[i].confidence * 100),
+                firstName: this.images[j].firstName,
+                lastName: this.images[j].lastName,
+                position: this.images[j].position,
+                company: this.images[j].company
               });
           }
         }
