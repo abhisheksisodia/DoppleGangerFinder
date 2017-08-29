@@ -22,7 +22,7 @@ export class FaceService {
     return this.http.post(this.faceSimilarUrl, 
       { faceId: capturedFaceId,
         faceListId: "sample_list",
-        maxNumOfCandidatesReturned: 3,
+        maxNumOfCandidatesReturned: 5,
         mode: "matchFace" }, 
         options)
       .map(data => data.json())
