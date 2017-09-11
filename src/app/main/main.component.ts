@@ -24,6 +24,7 @@ export class MainComponent implements OnInit {
   showMatches: Boolean = false;
   color = 'accent';
   mode = 'determinate';
+  testImageUrl = "https://firebasestorage.googleapis.com/v0/b/doppleganger-finder.appspot.com/o/WIN_20170818_11_54_45_Pro.jpg?alt=media&token=01eb58be-98be-4537-898c-624991eba1eb" 
 
   constructor(private route: ActivatedRoute, 
     private http:Http, 
@@ -54,7 +55,7 @@ export class MainComponent implements OnInit {
 
   async fetchSimilarFaces() {
     // passing test face id for now
-    this.face.getSimilarFaces("15f818b4-6350-4800-a152-63657201ef37")
+    this.face.getSimilarFaces("1008de78-9854-48cf-9200-62fb8a7e8bd1")
       .subscribe(data => {
         this.similarFaces = data;
       })
@@ -67,7 +68,8 @@ export class MainComponent implements OnInit {
           if(this.similarFaces[i].persistedFaceId == this.images[j].id) {
               this.matches.push( {
                 id: this.similarFaces[i].persistedFaceId, 
-                url: this.images[j].url,
+                url: this.testImageUrl,
+                matchedImageUrl: this.images[j].url,
                 confidence: Math.round(this.similarFaces[i].confidence * 100),
                 firstName: this.images[j].firstName,
                 lastName: this.images[j].lastName,
